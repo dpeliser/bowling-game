@@ -1,0 +1,33 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
+}
+
+ext {
+    junit = '5.2.0'
+    lombok = '1.18.20'
+    spring = '2.1.3.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+version = '1.0.1'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombok}"
+    annotationProcessor "org.projectlombok:lombok:${lombok}"
+    implementation "org.springframework.boot:spring-boot-starter:${spring}"
+    implementation "org.springframework.boot:spring-boot-starter-validation:${spring}"
+
+
+    testCompileOnly "org.projectlombok:lombok:${lombok}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombok}"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${spring}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junit}"
+}
